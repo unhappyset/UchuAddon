@@ -8,9 +8,8 @@
 
 ## 概要
 
-- 種別：Nebula on the Ship 用Addon
+- 種別：Addon
 - ベースMOD：Nebula on the Ship
-- 内容：追加役職・追加システム
 
 ---
 
@@ -22,28 +21,28 @@
 - **Nebula on the Ship** （制作：Dolly）  
   本アドオンのベースとなるMOD
   
-- **SuperNewRoles** （制作：）  
+- **SuperNewRoles**（代表：ykundesu）  
   一部役職アイデア・ロゴを使用
 
 - **ExtremeRoles**（制作：Yukieiji）  
   一部アイデア・ロゴを使用
 
-- **Town of Host**  （制作：）  
+- **Town of Host**（代表：tukasa0001）  
   一部役職アイデア・ロゴを使用
 
-- **Town of Host Y**  （制作：）  
+- **Town of Host Y**（制作：Yumenopai）  
   一部役職アイデア・ロゴを使用
 
-- **Town of Host K**  （制作：）  
+- **Town of Host K**（制作：KYMario）  
   一部役職アイデア・ロゴを使用
 
-- **Town of Us-R**  （制作：eDonnes124）  
+- **Town of Us-R**（制作：eDonnes124）  
   一部役職アイデア・ロゴを使用
 
-- **The Other Roles**  （制作：）  
+- **The Other Roles**（代表：Eisbison）  
   一部役職アイデア・ロゴを使用
 
-- **The Other Roles: GM Edition**  
+- **The Other Roles-GM-Haoming**（制作：Hageming）  
   一部役職アイデア・ロゴを使用
 
 ---
