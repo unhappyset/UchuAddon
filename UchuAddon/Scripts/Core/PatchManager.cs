@@ -1,4 +1,3 @@
-<<<<<<< HEAD:Scripts/Core/PatchManager.cs
 ﻿using Assets.InnerNet;
 using BepInEx.Unity.IL2CPP.Utils;
 using BepInEx.Unity.IL2CPP.Utils.Collections;
