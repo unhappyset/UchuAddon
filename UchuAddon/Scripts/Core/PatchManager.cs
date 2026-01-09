@@ -1,3 +1,4 @@
+<<<<<<< HEAD:Scripts/Core/PatchManager.cs
 ﻿using Assets.InnerNet;
 using BepInEx.Unity.IL2CPP.Utils;
 using BepInEx.Unity.IL2CPP.Utils.Collections;
@@ -196,7 +197,7 @@ public static class AddonScreen
             NebulaAPI.GUI.RawText(GUIAlignment.Center, AttributeAsset.DocumentStandard, "<size=110%><b>Illustration</b>\n</size>"),
             NebulaAPI.GUI.RawText(GUIAlignment.Center, AttributeAsset.DocumentStandard, "<size=110%>ねこかぼちゃ(nekokabocha), マカロン(macaron), シート(Sheat), りょい(ryoi)\n</size>\n"),
             NebulaAPI.GUI.RawText(GUIAlignment.Center, AttributeAsset.DocumentStandard, "<size=110%><b>Language</b>\n</size>"),
-            NebulaAPI.GUI.RawText(GUIAlignment.Center, AttributeAsset.DocumentStandard, "<size=110%>KpCam, HW, Plana, 回往\n</size>"),
+            NebulaAPI.GUI.RawText(GUIAlignment.Center, AttributeAsset.DocumentStandard, "<size=110%>回往(HW)  客串齐(KCQ)  Plana\n</size>"),
             NebulaAPI.GUI.VerticalMargin(0.15f)//,
             //new  GUIModernButton(GUIAlignment.Center, AttributeAsset.OptionsButtonMedium, new RawTextComponent("wiki"))
             //{
@@ -220,7 +221,7 @@ public static class AnonymousVoteBypass
         {
             if (GamePlayer.LocalPlayer.Role.Role == Hori.Scripts.Role.Crewmate.AdmiralU.MyRole)
             {
-                __result = false; 
+                __result = false;
             }
         }
     }
