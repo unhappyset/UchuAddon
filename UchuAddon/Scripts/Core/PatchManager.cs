@@ -1,4 +1,3 @@
-<<<<<<< HEAD:Scripts/Core/PatchManager.cs
 ﻿using Assets.InnerNet;
 using BepInEx.Unity.IL2CPP.Utils;
 using BepInEx.Unity.IL2CPP.Utils.Collections;
@@ -133,6 +132,14 @@ public class PatchManager
         if (response == null) yield break;
 
         ModNewsHistory.AllModNews = JsonStructure.Deserialize<List<ModNews>>(response) ?? new();
+
+        response = null!;
+        yield return NebulaWebRequest.CoGet(Helpers.ConvertUrl($"https://raw.githubusercontent.com/catudon1276/UchuAddon/master/UchuAddonAnnouncement_{lang}.json"), true, r => response = r);
+
+        if (response == null) yield break;
+
+        ModNewsHistory.AllModNews.AddRange(JsonStructure.Deserialize<List<ModNews>>(response) ?? new());
+
 
         foreach (var news in ModNewsHistory.AllModNews)
         {
