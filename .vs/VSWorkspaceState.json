@@ -2,9 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\UchuAddon",
-    "\\UchuAddon\\Scripts",
-    "\\UchuAddon\\Scripts\\Role"
+    "\\UchuAddon\\Scripts"
   ],
-  "SelectedNode": "\\UchuAddon\\Resources",
+  "SelectedNode": "\\UchuAddon",
   "PreviewInSolutionExplorer": false
 }

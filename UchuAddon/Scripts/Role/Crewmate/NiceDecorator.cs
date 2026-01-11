@@ -10,7 +10,7 @@ using Image = Virial.Media.Image;
 
 namespace Hori.Scripts.Role.Crewmate;
 
-public class NiceDecorator : DefinedSingleAbilityRoleTemplate<NiceDecorator.Ability>, DefinedRole
+public class NiceDecorator : DefinedSingleAbilityRoleTemplate<NiceDecorator.Ability>, DefinedRole, IAssignableDocument
 {
     public NiceDecorator() : base("nicedecoratorU", new(253f / 255f, 187f / 255f, 22f / 255f), RoleCategory.CrewmateRole, NebulaTeams.CrewmateTeam, [NumOfDecorationOption, DecorationCoolDownOption, ImpostorFilterOption, CrewmateFilterOption])
     {
@@ -67,11 +67,17 @@ public class NiceDecorator : DefinedSingleAbilityRoleTemplate<NiceDecorator.Abil
                 else CgiveableRoles.Add(role);
             });
     }
-
-        public class Ability : AbstractPlayerUsurpableAbility, IPlayerAbility
+    bool IAssignableDocument.HasTips => true;
+    bool IAssignableDocument.HasAbility => true;
+    IEnumerable<AssignableDocumentImage> IAssignableDocument.GetDocumentImages()
+    {
+        yield return new(DecorationImage, "role.nicedecoratorU.ability.decoration");
+    }
+    static private readonly Virial.Media.Image DecorationImage = NebulaAPI.AddonAsset.GetResource("DecorationButtonNice.png")!.AsImage(115f)!;
+    public class Ability : AbstractPlayerUsurpableAbility, IPlayerAbility
         {
             int[] IPlayerAbility.AbilityArguments => [IsUsurped.AsInt()];
-            static private readonly Virial.Media.Image DecorationImage = NebulaAPI.AddonAsset.GetResource("DecorationButtonNice.png")!.AsImage(115f)!;
+           
             private Dictionary<byte, DefinedRole> lastDecoratedRole = new Dictionary<byte, DefinedRole>();
             int leftDecoration = NumOfDecorationOption;
             public Ability(GamePlayer player, bool isUsurped) : base(player, isUsurped)

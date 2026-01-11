@@ -68,8 +68,8 @@ public class SpectrumU : DefinedRoleTemplate,  DefinedRole
     }
     RuntimeRole RuntimeAssignableGenerator<RuntimeRole>.CreateInstance(GamePlayer player, int[] arguments) => new Instance(player, Roles.GetRole(arguments.Get(0, -1)), arguments.Skip(1).ToArray());
 
-    static private IRelativeCoolDownConfiguration KillCoolDown = NebulaAPI.Configurations.KillConfiguration("options.role.spectrumU.killCooldown", CoolDownType.Relative, (0f, 60f, 2.5f), 25f, (-40f, 40f, 2.5f), -5f, (0.125f, 2f, 0.125f), 1f);
-    static public float KillCooldown => KillCoolDown.CoolDown;
+    static private IRelativeCooldownConfiguration KillCoolDown = NebulaAPI.Configurations.KillConfiguration("options.role.spectrumU.killCooldown", CoolDownType.Relative, (0f, 60f, 2.5f), 25f, (-40f, 40f, 2.5f), -5f, (0.125f, 2f, 0.125f), 1f);
+    static public float KillCooldown => KillCoolDown.Cooldown;
 
     static internal Image IconImage = NebulaAPI.AddonAsset.GetResource("RoleIcon/Spectrum.png")!.AsImage(100f)!;
     Image? DefinedAssignable.IconImage => IconImage;

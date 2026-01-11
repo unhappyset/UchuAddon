@@ -29,7 +29,7 @@ namespace Hori.Scripts.Role.Impostor;
 
 //オブジェクトを専用のものにするのは後で
 [NebulaRPCHolder]
-public class EclipseU : DefinedSingleAbilityRoleTemplate<EclipseU.Ability>, DefinedRole
+public class EclipseU : DefinedSingleAbilityRoleTemplate<EclipseU.Ability>, DefinedRole,IAssignableDocument
 {
     private EclipseU() : base("eclipseU", NebulaTeams.ImpostorTeam.Color, RoleCategory.ImpostorRole, NebulaTeams.ImpostorTeam, [UseOfMeteor, MeteorMarkCooldown, MeteorBlastCooldown, MeteorWarningTime, MarkStopTime, MeteorSize, ResetBlastCool, MarkMeetingReset, MarkPlaySE, SERange])
     {
@@ -82,6 +82,13 @@ public class EclipseU : DefinedSingleAbilityRoleTemplate<EclipseU.Ability>, Defi
                 index++;
             }
         }
+    }
+    bool IAssignableDocument.HasTips => false;
+    bool IAssignableDocument.HasAbility => true;
+    IEnumerable<AssignableDocumentImage> IAssignableDocument.GetDocumentImages()
+    {
+        yield return new(MeteorMarkImage, "role.eclipseU.ability.mark");
+        yield return new(MeteorBlastImage, "role.eclipseU.ability.blast");
     }
     public class Ability : AbstractPlayerUsurpableAbility, IPlayerAbility
     {

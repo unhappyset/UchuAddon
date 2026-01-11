@@ -19,7 +19,7 @@ using Image = Virial.Media.Image;
 
 namespace Hori.Scripts.Role.Impostor;
 
-public class EraserU : DefinedSingleAbilityRoleTemplate<EraserU.Ability>, HasCitation, DefinedRole
+public class EraserU : DefinedSingleAbilityRoleTemplate<EraserU.Ability>, HasCitation, DefinedRole,IAssignableDocument
 {
     public EraserU() : base("EraserU", NebulaTeams.ImpostorTeam.Color, RoleCategory.ImpostorRole, NebulaTeams.ImpostorTeam, [EraseCooldown, NumOfErase])
     {
@@ -43,6 +43,14 @@ public class EraserU : DefinedSingleAbilityRoleTemplate<EraserU.Ability>, HasCit
     static internal Image IconImage = NebulaAPI.AddonAsset.GetResource("RoleIcon/Eraser.png")!.AsImage(100f)!;
     Image? DefinedAssignable.IconImage => IconImage;
     static private readonly GameStatsEntry StatsSample = NebulaAPI.CreateStatsEntry("stats.EraserU.EraseSkill", GameStatsCategory.Roles, MyRole);
+
+    bool IAssignableDocument.HasTips => true;
+    bool IAssignableDocument.HasAbility => true;
+    IEnumerable<AssignableDocumentImage> IAssignableDocument.GetDocumentImages()
+    {
+        yield return new(EraseImage, "role.EraserU.ability.erase");
+    }
+
     public class Ability : AbstractPlayerUsurpableAbility, IPlayerAbility
     {
         int[] IPlayerAbility.AbilityArguments => [IsUsurped.AsInt()];

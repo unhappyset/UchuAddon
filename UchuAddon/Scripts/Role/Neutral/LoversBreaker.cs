@@ -27,7 +27,7 @@ using Image = Virial.Media.Image;
 
 namespace Hori.Scripts.Role.Neutral;
 
-public class LoversBreakerU : DefinedRoleTemplate, HasCitation, DefinedRole
+public class LoversBreakerU : DefinedRoleTemplate, HasCitation, DefinedRole,IAssignableDocument
 {
     static readonly public RoleTeam MyTeam = new Team("teams.loversbreakerU", new Virial.Color(235, 0, 192), TeamRevealType.OnlyMe);
     private LoversBreakerU() : base("loversbreakerU", MyTeam.Color, RoleCategory.NeutralRole, MyTeam, [ExpCooldown, NumOfWinExp, NumOfDeathExp, TakeoverWin, BecomingLoversMeansDeath])
@@ -46,11 +46,16 @@ public class LoversBreakerU : DefinedRoleTemplate, HasCitation, DefinedRole
     Image? DefinedAssignable.IconImage => IconImage;
     static public LoversBreakerU MyRole = new LoversBreakerU();
     bool AssignableFilterHolder.CanLoadDefault(DefinedAssignable assignable) => CanLoadDefaultTemplate(assignable) && assignable is not Lover;
-
+    bool IAssignableDocument.HasTips => true;
+    bool IAssignableDocument.HasAbility => true;
+    IEnumerable<AssignableDocumentImage> IAssignableDocument.GetDocumentImages()
+    {
+        yield return new(ExpImage, "role.loversbreakerU.ability.exp");
+    }
+    static private Virial.Media.Image ExpImage = NebulaAPI.AddonAsset.GetResource("ExpButton.png")!.AsImage(115f)!;
     public class Instance : RuntimeAssignableTemplate, RuntimeRole, RuntimeAssignable, ILifespan, IBindPlayer, IGameOperator, IReleasable
     {
         DefinedRole RuntimeRole.Role => MyRole;
-        static private Virial.Media.Image ExpImage = NebulaAPI.AddonAsset.GetResource("ExpButton.png")!.AsImage(115f)!;
         static int leftExp;
         static int deathExp;
 

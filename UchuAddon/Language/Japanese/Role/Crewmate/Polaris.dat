@@ -1,0 +1,60 @@
+# Assignable
+
+"role.polarisU.name" : "ポラリス"
+"role.polarisU.short" : "ポ"
+"role.polarisU.blurb" : "蒼天の導星"
+
+# Document
+
+"role.polarisU.doc" : "キルと幻視を使えるクルーメイトです。"
+"role.polarisU.ability.title" : "固有能力 "導きの青い星""
+"role.polarisU.ability.main" : "<b>キル能力</b>と<b>幻視能力</b>を使えます。<br>%REWIND%"
+"role.polarisU.ability.main.rewind" : "<var>幻視能力にはタスクを消費します。</var>"
+"role.polarisU.ability.main.norewind" : ""
+"role.polarisU.ability.kill" : "<title>キル</title>プレイヤーをキルします。"
+"role.polarisU.ability.medium" : "<title>幻視</title>死者の役職を占います。結果は会議で表示され、自身のみ視認可能です。"
+
+# Options
+
+"options.role.polarisU.detail" : "ポラリスはキル能力と幻視能力を使用できるクルーメイトです。"
+"options.role.polarisU.numofKillOption" : "キル可能回数"
+"options.role.polarisU.killCoolDownOption" : "キルクールダウン"
+"options.role.polarisU.mediumCooldown" : "幻視クールダウン"
+"options.role.polarisU.mediumDuration" : "幻視所要時間"
+"options.role.polarisU.numOfMedium" : "幻視使用可能回数"
+"options.role.polarisU.rewindTask" : "幻視使用時タスクを消費"
+"options.role.polarisU.mediumRewindTask" : "幻視消費タスク"
+
+# Game
+
+
+# UI
+
+"button.label.polarisU.Kill" : "キル"
+"button.label.polarisU.Medium" : "幻視"
+"options.role.polarisU.message.header" : "幻視結果"
+
+# Stats
+
+
+# Titles
+
+"achievement.polarisU.common1.titel" : "蒼天の導星"
+"achievement.polarisU.common1.goal" : "非クルーメイトをキルする"
+"achievement.polarisU.common1.cond" : ""
+
+"achievement.polarisU.common2.titel" : "幻"
+"achievement.polarisU.common2.goal" : "幻視能力を使用する"
+"achievement.polarisU.common2.cond" : ""
+
+"achievement.polarisU.another1.titel" : "哀色の疵"
+"achievement.polarisU.another1.goal" : "クルーメイトをキルする"
+"achievement.polarisU.another1.cond" : ""
+
+"achievement.polarisU.hard1.titel" : "軌道上の英雄"
+"achievement.polarisU.hard1.goal" : "透明化中に、キルをする"
+"achievement.polarisU.hard1.cond" : ""
+
+"achievement.polarisU.challenge1.title" : "炯々と煌めくアルタイル"
+"achievement.polarisU.challenge1.goal" : "2人以上の非クルーメイトをキルし、2人以上の非クルーメイトプレイヤーを幻視し勝利する"
+"achievement.polarisU.challenge1.cond" : "クルーメイト陣営をキルしないこと"

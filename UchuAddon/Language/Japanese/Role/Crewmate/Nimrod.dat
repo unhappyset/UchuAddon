@@ -1,0 +1,27 @@
+# Assignable
+
+"role.nimrodU.name" : "ニムロッド"
+"role.nimrodU.short" : "ニム"
+"role.nimrodU.blurb" : "覚悟の一矢"
+
+# Document
+
+"role.nimrodU.doc" : "追放時に選んだ人を道連れするクルーメイトです。"
+
+# Options
+
+"options.role.nimrodU.detail" : "ニムロッドは会議中に指定したプレイヤーを道連れ追放することが出来るクルーメイトです。<br>能力を使用しても追放されなかった場合、使用回数が減少します。"
+"options.role.nimrodU.numOfInvolve" : "道連れ試行最大回数"
+"options.role.nimrodU.maxLeftTimer" : "道連れ可能な最大残会議時間"
+
+# Game
+
+
+# UI
+
+"role.nimrodU.hudText" : "残り道連れ試行回数"
+
+# Stats
+
+
+# Titles

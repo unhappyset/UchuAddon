@@ -1,0 +1,33 @@
+# Assignable
+
+"role.evildecoratorU.name" : "イビルデコレーター"
+"role.evildecoratorU.short" : "イデ"
+"role.evildecoratorU.blurb" : "粉飾としての美"
+
+# Document
+
+"role.evildecoratorU.doc" : "他の人の役職を変更するインポスターです。"
+"role.evildecoratorU.ability.title" : "固有能力 "デコレーション""
+"role.evildecoratorU.ability.main" : "イビルデコレーターは他のプレイヤーの役職を変えることが出来ます。<br>第三陣営やマッドメイトに対してデコレーションを使用すると、デコレーションの使用回数を無駄にしてしまいます。<br>フィルターで排出されると選んだ役職のみ排出され、クルーメイトがインポスターになること等はありません。"
+"role.evildecoratorU.ability.decoration" : "<title>装飾</title>プレイヤーの役職を変更します。"
+"role.evildecoratorU.tips" : "フィルターを設定していないと、役職を配ることができません。"
+
+# Options
+
+"options.role.evildecoratorU.detail" : "イビルデコレーターは他のプレイヤーの役職を変えることが出来ます。"
+"options.role.evildecoratorU.maxdecorationCount" : "デコレーション使用回数"
+"options.role.evildecoratorU.decorationCoolDown" : "デコレーションクールダウン"
+"options.role.evildecoratorU.ImpostorgiveFilter" : "インポスター排出可能フィルター"
+"options.role.evildecoratorU.CrewmategiveFilter" : "クルーメイト排出可能フィルター"
+
+# Game
+
+
+# UI
+
+"button.label.decoration" : "装飾"
+
+# Stats
+
+
+# Titles

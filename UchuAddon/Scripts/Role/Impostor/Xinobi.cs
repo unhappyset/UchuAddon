@@ -56,30 +56,37 @@ using Vector3 = UnityEngine.Vector3;
 
 namespace Hori.Scripts.Role.Impostor;
 
-public class XinobiU : DefinedRoleTemplate, DefinedRole
+public class XinobiU : DefinedRoleTemplate, DefinedRole,IAssignableDocument
 {
     private XinobiU() : base("xinobiU", NebulaTeams.ImpostorTeam.Color, RoleCategory.ImpostorRole, NebulaTeams.ImpostorTeam, [KillCoolDown,XinobiVentCooldown, ClairvoyanceOption,VentConfiguration])
     {
         ConfigurationHolder?.AddTags(AddonConfigurationTags.TagUchuAddon);
     }
-    static private IRelativeCoolDownConfiguration KillCoolDown = NebulaAPI.Configurations.KillConfiguration("options.role.xinobiU.killCooldown", CoolDownType.Relative, (0f, 60f, 2.5f), 25f, (-40f, 40f, 2.5f), -5f, (0.125f, 2f, 0.125f), 1f);
+    static private IRelativeCooldownConfiguration KillCoolDown = NebulaAPI.Configurations.KillConfiguration("options.role.xinobiU.killCooldown", CoolDownType.Relative, (0f, 60f, 2.5f), 25f, (-40f, 40f, 2.5f), -5f, (0.125f, 2f, 0.125f), 1f);
     static private FloatConfiguration XinobiVentCooldown = NebulaAPI.Configurations.Configuration("options.role.xinobiU.xinobiUVentCooldown", (2.5f, 60f, 2.5f), 20f, FloatConfigurationDecorator.Second);
     static private BoolConfiguration ClairvoyanceOption = NebulaAPI.Configurations.Configuration("options.role.spectre.clairvoyance", true);
     static private IVentConfiguration VentConfiguration = NebulaAPI.Configurations.VentConfiguration("role.reaper.vent", false, null, -1, (0f, 60f, 2.5f), 10f, (0f, 30f, 2.5f), 20f);
-    static public float KillCooldown => KillCoolDown.CoolDown;
+    static public float KillCooldown => KillCoolDown.Cooldown;
     RuntimeRole RuntimeAssignableGenerator<RuntimeRole>.CreateInstance(GamePlayer player, int[] arguments) => new Instance(player);
     static internal Image IconImage = NebulaAPI.AddonAsset.GetResource("RoleIcon/Xinobi.png")!.AsImage(100f)!;
     Image? DefinedAssignable.IconImage => IconImage;
     static public XinobiU MyRole = new XinobiU();
-
+    bool IAssignableDocument.HasTips => true;
+    bool IAssignableDocument.HasAbility => true;
+    IEnumerable<AssignableDocumentImage> IAssignableDocument.GetDocumentImages()
+    {
+        yield return new(PossessImage, "role.xinobiU.ability.possess");
+        yield return new(VentImage, "role.xinobiU.ability.vent");
+    }
+    static private readonly Virial.Media.Image PossessImage = NebulaAPI.AddonAsset.GetResource("XinobiButton.png")!.AsImage(115f)!;
+    static private readonly Virial.Media.Image ReleaseImage = NebulaAPI.AddonAsset.GetResource("XinobiButton.png")!.AsImage(115f)!;
+    static private readonly Virial.Media.Image VentImage = NebulaAPI.AddonAsset.GetResource("XinobiVentButton.png")!.AsImage(115f)!;
     public class Instance : RuntimeVentRoleTemplate, RuntimeRole
     {
         public override DefinedRole Role => MyRole;
 
         bool RuntimeRole.HasVanillaKillButton => false;
-        static private readonly Virial.Media.Image PossessImage = NebulaAPI.AddonAsset.GetResource("XinobiButton.png")!.AsImage(115f)!;
-        static private readonly Virial.Media.Image ReleaseImage = NebulaAPI.AddonAsset.GetResource("XinobiButton.png")!.AsImage(115f)!;
-        static private readonly Virial.Media.Image VentImage = NebulaAPI.AddonAsset.GetResource("XinobiVentButton.png")!.AsImage(115f)!;
+
         bool Possess = false;
         float min = 0f;
         Vent? ventLocal = null;
@@ -187,7 +194,7 @@ public class XinobiU : DefinedRoleTemplate, DefinedRole
                     ventNinjaButton.StartCoolDown();
                 };
 
-                Virial.Components.ObjectTracker<Console> consoleTracker = new ObjectTrackerUnityImpl<Console, Console>(MyPlayer.VanillaPlayer, AmongUsUtil.VanillaKillDistance, 
+                Virial.Components.ObjectTracker<Console> consoleTracker = new ObjectTrackerUnityImpl<Console, Console>(MyPlayer.VanillaPlayer, 3f/*AmongUsUtil.VanillaKillDistance*/, 
                     () => ShipStatus.Instance.AllConsoles,c => true, c => true, c => c,
                     c => [c.transform.position], c => c.Image, Color.red,true, false).Register(this);
 

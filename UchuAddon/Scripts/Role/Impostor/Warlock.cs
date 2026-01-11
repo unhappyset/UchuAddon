@@ -17,7 +17,7 @@ using Image = Virial.Media.Image;
 
 namespace Hori.Scripts.Role.Impostor;
 
-public class WarlockU : DefinedSingleAbilityRoleTemplate<WarlockU.Ability>, DefinedRole, HasCitation
+public class WarlockU : DefinedSingleAbilityRoleTemplate<WarlockU.Ability>, DefinedRole, HasCitation,IAssignableDocument
 {
     public static TranslatableTag CurseKill = new("statistics.curseKill");
 
@@ -31,7 +31,7 @@ public class WarlockU : DefinedSingleAbilityRoleTemplate<WarlockU.Ability>, Defi
     AbilityAssignmentStatus DefinedRole.AssignmentStatus => AbilityAssignmentStatus.Killers;
 
 
-    static private readonly IRelativeCoolDownConfiguration KillCooldownOption = NebulaAPI.Configurations.KillConfiguration("options.role.warlockU.curseKillCooldown", CoolDownType.Immediate, (0f, 60f, 2.5f), 30f, (-30f, 30f, 2.5f), 0f, (0.5f, 5f, 0.125f), 1.0f);
+    static private readonly IRelativeCooldownConfiguration KillCooldownOption = NebulaAPI.Configurations.KillConfiguration("options.role.warlockU.curseKillCooldown", CoolDownType.Immediate, (0f, 60f, 2.5f), 30f, (-30f, 30f, 2.5f), 0f, (0.5f, 5f, 0.125f), 1.0f);
     static private readonly FloatConfiguration CurseCooldownOption = NebulaAPI.Configurations.Configuration("options.role.warlockU.curseCooldown", (5f, 60f, 2.5f), 30f, FloatConfigurationDecorator.Second);
     static private readonly BoolConfiguration CanKillTeamPlayerOption = NebulaAPI.Configurations.Configuration("options.role.warlockU.canKillTeamPlayer", true);
     static private readonly FloatConfiguration KillFreezeTimeOption = NebulaAPI.Configurations.Configuration("options.role.warlockU.killFreezeTime", (0f, 10f, 0.5f), 3f, FloatConfigurationDecorator.Second);
@@ -41,10 +41,17 @@ public class WarlockU : DefinedSingleAbilityRoleTemplate<WarlockU.Ability>, Defi
     Image? DefinedAssignable.IconImage => IconImage;
 
     static public WarlockU MyRole = new();
+    bool IAssignableDocument.HasTips => false;
+    bool IAssignableDocument.HasAbility => true;
+    IEnumerable<AssignableDocumentImage> IAssignableDocument.GetDocumentImages()
+    {
+        yield return new(SampleImage, "role.warlockU.ability.curse");
+    }
+    static private readonly Virial.Media.Image SampleImage = NebulaAPI.AddonAsset.GetResource("WarlockCurseButton.png")!.AsImage(115f)!;
     public class Ability : AbstractPlayerUsurpableAbility, IPlayerAbility
     {
 
-        static private readonly Virial.Media.Image SampleImage = NebulaAPI.AddonAsset.GetResource("WarlockCurseButton.png")!.AsImage(115f)!;
+        
         GamePlayer? cursePlayer = null;
         ObjectTracker<Player> killTracker = null;
         PoolablePlayer? curseTargetIcon = null;

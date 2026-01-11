@@ -36,7 +36,7 @@ using Vector3 = UnityEngine.Vector3;
 
 namespace Hori.Scripts.Role.Crewmate;
 
-public class AdmiralU : DefinedSingleAbilityRoleTemplate<AdmiralU.Ability>, DefinedRole
+public class AdmiralU : DefinedSingleAbilityRoleTemplate<AdmiralU.Ability>, DefinedRole, IAssignableDocument
 {
     public AdmiralU() : base("admiralU", new(61, 88, 179), RoleCategory.CrewmateRole, NebulaTeams.CrewmateTeam, [NumOfAdmiral,PublickName, NumOfPublickTask, VoteWatching, NotGuess, PrivateNameGuess])
     {
@@ -61,6 +61,19 @@ public class AdmiralU : DefinedSingleAbilityRoleTemplate<AdmiralU.Ability>, Defi
     {
         return null;
     }
+
+    bool IAssignableDocument.HasTips => false;
+    bool IAssignableDocument.HasAbility => true;
+    IEnumerable<AssignableDocumentImage> IAssignableDocument.GetDocumentImages()
+    {
+        yield return new(admiralButtonSprite, "role.admiralU.ability.skill");
+    }
+    IEnumerable<AssignableDocumentReplacement> IAssignableDocument.GetDocumentReplacements()
+    {
+        yield return new("%PUBLIC%", Language.Translate(PublickName ? "role.admiralU.ability.main.public" : "role.admiralU.ability.main.private"));
+    }
+    static private Image admiralButtonSprite = NebulaAPI.AddonAsset.GetResource("AdmiralSkillButton.png")!.AsImage(115f)!;
+
     public class Ability : AbstractPlayerUsurpableAbility, IPlayerAbility
     {
 
@@ -72,7 +85,7 @@ public class AdmiralU : DefinedSingleAbilityRoleTemplate<AdmiralU.Ability>, Defi
         static List<GamePlayer> ExiledPlayer = new List<GamePlayer>();
         float TaskPercent = NumOfPublickTask / 10f;
 
-        static private Image admiralButtonSprite = NebulaAPI.AddonAsset.GetResource("AdmiralSkillButton.png")!.AsImage(115f)!;
+        
         public Ability(GamePlayer player, bool isUsurped) : base(player, isUsurped)
         {
             if (AmOwner)

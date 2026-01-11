@@ -1,0 +1,30 @@
+# Assignable
+
+"role.spectrumU.name" : "スペクトラム"
+"role.spectrumU.short" : "スペ"
+"role.spectrumU.blurb" : "違法改造"
+
+# Document
+
+"role.spectrumU.doc" : "一部のクルー能力を使うことが出来ます。"
+
+# Options
+
+"options.role.spectrumU.detail" : "スペクトラムは一部のクルー役職の能力を使えるインポスターです。"
+"options.role.spectrumU.killCooldown" : "キルクールダウン"
+
+# Game
+
+"options.role.count.custom" : "インポスター割当人数"
+"options.role.chance.custom" : "インポスター割当確率"
+"help.rolePreview.inner.custom.100" : "インポスター化 確定出現"
+"help.rolePreview.inner.custom.random" : "インポスター化 ランダム出現"
+
+# UI
+
+"role.spectrumU.prefix" : ""
+
+# Stats
+
+
+# Titles

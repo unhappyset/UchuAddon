@@ -1,0 +1,43 @@
+# Assignable
+
+"role.lighterU.name" : "ライター"
+"role.lighterU.short" : "ラ"
+"role.lighterU.blurb" : "私を照らして"
+
+# Document
+
+"role.lighterU.doc" : "ライトで視界を広げるクルーメイトです。"
+
+# Options
+
+"options.role.lighterU.detail" : "ライターは自身の視野を広げることが出来るクルーメイトです。"
+"options.role.lighterU.lightCoolDown" : "ライトクールダウン"
+"options.role.lighterU.lightDuration" : "ライト持続時間"
+"options.role.lighterU.lightRatio" : "ライト倍率"
+"options.role.lighterU.blackoutIgnore" : "停電を常に無視"
+
+# Game
+
+
+# UI
+
+"button.label.light" : "ライト"
+
+# Stats
+
+
+# Titles
+
+"achievement.lighterU.common1.title" : "私を照らして"
+"achievement.lighterU.common1.goal" : "1ゲーム中に5回ライトを使用する"
+"achievement.lighterU.common1.cond" : ""
+
+"achievement.lighterU.another1.title" : "不良品"
+"achievement.lighterU.another1.goal" : "ライトで視野を狭める"
+"achievement.lighterU.another1.cond" : "こちら、返品不可となっております。"
+"achievement.lighterU.another1.splitted.2" : "不良品"
+
+"achievement.lighterU.challenge1.title" : "光は我らを照らす"
+"achievement.lighterU.challenge1.goal" : "ライト使用中、5人を視界に収める"
+"achievement.lighterU.challenge1.cond" : ""
+"achievement.lighterU.challenge1.splitted.1" : "我らを"

@@ -1,0 +1,29 @@
+# Assignable
+
+"role.alchemistU.name" : "アルケミスト"
+"role.alchemistU.short" : "ア"
+"role.alchemistU.blurb" : "死への調和"
+
+# Document
+
+"role.alchemistU.doc" : "死体を錬金し、錬金弾を作成するクルーメイトです。"
+
+# Options
+
+"options.role.alchemistU.detail" : "死体を錬金し、会議中の殺害能力と等価交換することができます。"
+"options.role.AlchemistU.AlchemyCooldown" : "錬金クールダウン"
+"options.role.AlchemistU.alchemycount" : "一度の錬金で手に入る錬金弾"
+"options.role.AlchemistU.NumOfShotPerMeeting" : "1会議の最大弾数"
+
+# Game
+
+
+# UI
+
+"button.label.Alchemy" : "錬金"
+"alchemistU.leftalchemy" : "錬金弾残り"
+
+# Stats
+
+
+# Titles

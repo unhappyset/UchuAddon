@@ -13,7 +13,7 @@ using Image = Virial.Media.Image;
 
 namespace Hori.Scripts.Role.Crewmate
 {
-    public class SlimeU : DefinedSingleAbilityRoleTemplate<SlimeU.Ability>, DefinedRole
+    public class SlimeU : DefinedSingleAbilityRoleTemplate<SlimeU.Ability>, DefinedRole,IAssignableDocument
     {
         public SlimeU() : base("slimeU",new(36, 255, 12),RoleCategory.CrewmateRole,NebulaTeams.CrewmateTeam,new[]
         {
@@ -45,6 +45,13 @@ namespace Hori.Scripts.Role.Crewmate
         static public SlimeU MyRole = new();
         static private readonly GameStatsEntry StatsSlime = NebulaAPI.CreateStatsEntry("stats.slimeU.SlimeSkill", GameStatsCategory.Roles, MyRole);
 
+        bool IAssignableDocument.HasTips => true;
+        bool IAssignableDocument.HasAbility => true;
+        IEnumerable<AssignableDocumentImage> IAssignableDocument.GetDocumentImages()
+        {
+            yield return new(JumboImage, "role.slimeU.ability.jumbo");
+            yield return new(MiniImage, "role.slimeU.ability.mini");
+        }
         public class Ability : AbstractPlayerUsurpableAbility, IPlayerAbility
         {
             int[] IPlayerAbility.AbilityArguments => [IsUsurped.AsInt()];

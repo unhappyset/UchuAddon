@@ -1,0 +1,46 @@
+# Assignable
+
+"role.guardianU.name" : "ガーディアン"
+"role.guardianU.short" : "ガ"
+"role.guardianU.blurb" : "神の加護"
+
+# Document
+
+"role.guardianU.doc" : "キルバリアを展開するクルーメイトです。"
+
+# Options
+
+"options.role.guardianU.detail" : "ガーディアンはタスクをこなし、キルを防ぐバリアを得るクルーメイトです。"
+"options.role.guardianU.shieldTask" : "バリア展開タスク割合"
+"options.role.guardianU.shieldLimit" : "回数制限バリア"
+"options.role.guardianU.numOfShield" : "バリア最大回数"
+
+# Game
+
+
+# UI
+
+
+# Stats
+
+
+# Titles
+
+"achievement.guardianU.common1.title" : "象徴"
+"achievement.guardianU.common1.goal" : "一度もキルされず、勝利する。"
+"achievement.guardianU.common1.cond" : ""
+
+"achievement.guardianU.another1.title" : "信仰不足"
+"achievement.guardianU.another1.goal" : "バリアを展開する前にキルされ、死亡する"
+"achievement.guardianU.another1.cond" : ""
+
+"achievement.guardianU.another2.title" : "懺悔"
+"achievement.guardianU.another2.goal" : "追放され、死亡する。"
+"achievement.guardianU.another2.cond" : ""
+"achievement.guardianU.another2.flavor" : ""神は私を見ていないかった"―シスターの懺悔"
+
+"achievement.guardianU.challenge1.title" : "祈りは届いた"
+"achievement.guardianU.challenge1.goal" : "キルを防ぐ"
+"achievement.guardianU.challenge1.cond" : ""
+"achievement.guardianU.challenge1.splitted.1" : "祈り"
+"achievement.guardianU.challenge1.flavor" : "神は私を見ていた"

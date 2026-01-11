@@ -31,7 +31,7 @@ using Image = Virial.Media.Image;
 
 namespace Hori.Scripts.Role.Crewmate;
 
-public class PolarisU : DefinedSingleAbilityRoleTemplate<PolarisU.Ability>, DefinedRole
+public class PolarisU : DefinedSingleAbilityRoleTemplate<PolarisU.Ability>, DefinedRole,IAssignableDocument
 {
     private PolarisU(): base("polarisU", new(130, 178, 255), RoleCategory.CrewmateRole, NebulaTeams.CrewmateTeam, [NumOfKILLOption,KillCooldownOption,CanKillHidingPlayerOption, SealAbilityUntilReportingDeadBodiesOption,MediumCooldown, MediumDuration,NumOfMedium,RewindTask,MediumRewindTask]) 
     {
@@ -58,10 +58,21 @@ public class PolarisU : DefinedSingleAbilityRoleTemplate<PolarisU.Ability>, Defi
     {
         return null;
     }
+    bool IAssignableDocument.HasTips => false;
+    bool IAssignableDocument.HasAbility => true;
+    IEnumerable<AssignableDocumentImage> IAssignableDocument.GetDocumentImages()
+    {
+        yield return new(KillImage, "role.polarisU.ability.kill");
+        yield return new(MediumImage, "role.polarisU.ability.medium");
+    }
+    IEnumerable<AssignableDocumentReplacement> IAssignableDocument.GetDocumentReplacements()
+    {
+        yield return new("%REWIND%", Language.Translate(RewindTask ? "role.polarisU.ability.main.rewind" : "role.polarisU.ability.main.norewind"));
+    }
+    static private readonly Virial.Media.Image KillImage = NebulaAPI.AddonAsset.GetResource("KillButtonCyan.png")!.AsImage(100f)!;
+    static private readonly Virial.Media.Image MediumImage = NebulaAPI.AddonAsset.GetResource("PolarisMediumButton.png")!.AsImage(115f)!;
     public class Ability : AbstractPlayerUsurpableAbility, IPlayerAbility
     {
-        static private readonly Virial.Media.Image KillImage = NebulaAPI.AddonAsset.GetResource("KillButtonCyan.png")!.AsImage(100f)!;
-        static private readonly Virial.Media.Image MediumImage = NebulaAPI.AddonAsset.GetResource("PolarisMediumButton.png")!.AsImage(115f)!;
         int left = NumOfKILLOption;
         int leftMedium = NumOfMedium;
         int ImpostorMedium = 0;

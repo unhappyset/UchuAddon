@@ -1,0 +1,35 @@
+# Assignable
+
+"role.superVisorU.name" : "バイザー"
+"role.superVisorU.short" : "バ"
+"role.superVisorU.blurb" : "船の管理人"
+
+"role.visorModifierU.name" : "バイザー"
+"role.visorModifierU.short" : "バ"
+"role.visorModifierU.blurb": "船の管理人"
+
+# Document
+
+"role.superVisorU.doc" : "ポータブルアドミンを持つクルーメイトです。"
+
+# Options
+
+"options.role.superVisorU.detail" : "バイザーはどこからでもアドミンを見ることが出来るクルーメイトです。"
+"options.role.superVisorU.group.charge" : "充電設定"
+"options.role.superVisorU.charge" : "充電機能"
+"options.role.superVisorU.AdminCharge" : "初期チャージ量"
+"options.role.superVisorU.chargesPerTasks" : "タスクでのチャージ増加量"
+
+"options.role.visorModifierU.detail" : "どこからでもアドミンを見ることが出来るモディファイアです。"
+
+# Game
+
+
+# UI
+
+"button.label.Admin" : "アドミン"
+
+# Stats
+
+
+# Titles

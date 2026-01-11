@@ -1,4 +1,5 @@
-﻿using BepInEx.Unity.IL2CPP.Utils.Collections;
+﻿using AsmResolver.PE;
+using BepInEx.Unity.IL2CPP.Utils.Collections;
 using Hori.Core;
 using Hori.Scripts.Abilities;
 using Nebula;
@@ -43,7 +44,7 @@ using Vector3 = UnityEngine.Vector3;
 
 namespace Hori.Scripts.Role.Neutral;
 
-public class TunaU : DefinedRoleTemplate, HasCitation, DefinedRole
+public class TunaU : DefinedRoleTemplate, HasCitation, DefinedRole,IAssignableDocument
 {
     public static Team MyTeam = new Team("teams.tunaU", new Virial.Color(171, 245, 255), TeamRevealType.OnlyMe);
     private TunaU() : base("tunaU", new Virial.Color(171, 245, 255), RoleCategory.NeutralRole, MyTeam, [TunaAction,UseallyStopTime,TotalStopTime,MeetingTotalTimeReset,MeetingStopTime,VentOption,
@@ -66,6 +67,13 @@ public class TunaU : DefinedRoleTemplate, HasCitation, DefinedRole
     static internal Image IconImage = NebulaAPI.AddonAsset.GetResource("RoleIcon/Tuna.png")!.AsImage(100f)!;
     Image? DefinedAssignable.IconImage => IconImage;
     static public TunaU MyRole = new TunaU();
+    static private readonly Virial.Media.Image GaugeImage = NebulaAPI.AddonAsset.GetResource("TunaGaugeDocuments.png")!.AsImage(100f)!;
+    bool IAssignableDocument.HasTips => true;
+    bool IAssignableDocument.HasAbility => true;
+    IEnumerable<AssignableDocumentImage> IAssignableDocument.GetDocumentImages()
+    {
+        yield return new(GaugeImage, "role.tunaU.ability.gauge");
+    }
     public class Instance : RuntimeAssignableTemplate, RuntimeRole
     {
         DefinedRole RuntimeRole.Role => MyRole;

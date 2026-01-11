@@ -27,7 +27,7 @@ using Virial.Media;
 
 namespace Hori.Scripts.Role.Impostor;
 
-public class RocketU : DefinedSingleAbilityRoleTemplate<RocketU.Ability>, DefinedRole, HasCitation
+public class RocketU : DefinedSingleAbilityRoleTemplate<RocketU.Ability>, DefinedRole, HasCitation,IAssignableDocument
 {
 
     public static TranslatableTag Launch = new("statistics.Launch");
@@ -53,12 +53,17 @@ public class RocketU : DefinedSingleAbilityRoleTemplate<RocketU.Ability>, Define
     static public RocketU MyRole = new();
 
     public override Ability CreateAbility(GamePlayer player, int[] arguments) => new Ability(player, arguments.GetAsBool(0));
-
-
+    static private readonly Image HoldButtonSprite = NebulaAPI.AddonAsset.GetResource("HoldButton.png")!.AsImage(115f)!;
+    static private readonly Image LaunchButtonSprite = NebulaAPI.AddonAsset.GetResource("RocketLaunchButton.png")!.AsImage(115f)!;
+    bool IAssignableDocument.HasTips => true;
+    bool IAssignableDocument.HasAbility => true;
+    IEnumerable<AssignableDocumentImage> IAssignableDocument.GetDocumentImages()
+    {
+        yield return new(HoldButtonSprite, "role.rocketU.ability.hold");
+        yield return new(LaunchButtonSprite, "role.rocketU.ability.launch");
+    }
     public class Ability : AbstractPlayerUsurpableAbility, IPlayerAbility
     {
-        static private readonly Image HoldButtonSprite = NebulaAPI.AddonAsset.GetResource("HoldButton.png")!.AsImage(115f)!;
-        static private readonly Image LaunchButtonSprite = NebulaAPI.AddonAsset.GetResource("RocketLaunchButton.png")!.AsImage(115f)!;
         int[] IPlayerAbility.AbilityArguments => new int[] { IsUsurped.AsInt() };
 
         static private byte[] holdingPlayers = Array.Empty<byte>();

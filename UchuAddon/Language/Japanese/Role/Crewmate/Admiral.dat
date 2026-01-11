@@ -1,0 +1,37 @@
+# Assignable
+
+"role.admiralU.name" : "アドミラル"
+"role.admiralU.short" : "ア"
+"role.admiralU.blurb" : "絶対権限"
+
+# Document
+
+"role.admiralU.doc" : "提督権限を行使し追放を防ぐクルーメイトです。"
+"role.admiralU.ability.title" : "固有能力 "絶対的提督権限""
+"role.admiralU.ability.main" : "アドミラルは追放を防ぐクルーメイトです。能力を使用した会議は追放を防ぎます。"
+"role.admiralU.ability.skill" : "<title>提督権限</title>追放を防ぎます。能力を発動した会議は追放者が出ても死にません。"
+
+# Options
+
+"options.role.admiralU.detail" : "アドミラルは追放を防ぐクルーメイトです。能力を使用した会議は追放を防ぐことが出来ます。"
+"options.role.admiralU.numOfAdmiral" : "提督権限使用可能回数"
+"options.role.admiralU.publicName" : "役職を公開"
+"options.role.admiralU.publicName.detail" : "設定量のタスクを終えた時、アドミラルの名前が変色します。"
+"options.role.admiralU.numOfPublicTask" : "役職公開タスク数"
+"options.role.admiralU.voteWatching" : "匿名投票貫通"
+"options.role.admiralU.notGuess" : "アドミラル推察不可"
+"options.role.admiralU.privateNameGuess" : "役職非公開時推察可能"
+
+# Game
+
+
+# UI
+
+"button.label.admiral" : "提督権限"
+"role.admiralU.message1" : "提督権限により追放が無効化されました"
+"role.admiralU.hudText" : "残り使用回数"
+
+# Stats
+
+
+# Titles
