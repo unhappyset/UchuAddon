@@ -21,10 +21,10 @@
 - **Nebula on the Ship** （制作：Dolly）  
   本アドオンのベースとなるMOD
   
-- **SuperNewRoles**（代表：ykundesu）  
+- **Super New Roles**（代表：ykundesu）  
   一部役職アイデア・ロゴを使用
 
-- **ExtremeRoles**（制作：Yukieiji）  
+- **Extreme Roles**（制作：Yukieiji）  
   一部アイデア・ロゴを使用
 
 - **Town of Host**（代表：tukasa0001）  
