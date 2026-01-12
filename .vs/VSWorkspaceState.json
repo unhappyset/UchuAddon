@@ -2,7 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\UchuAddon",
-    "\\UchuAddon\\Scripts"
+    "\\UchuAddon\\Scripts",
+    "\\UchuAddon\\Scripts\\Role",
+    "\\UchuAddon\\Scripts\\Role\\Crewmate"
   ],
   "SelectedNode": "\\UchuAddon",
   "PreviewInSolutionExplorer": false

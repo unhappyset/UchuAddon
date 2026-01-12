@@ -1,0 +1,36 @@
+# Assignable
+
+"role.sonarU.name" : "ソナー"
+"role.sonarU.short" : "ソナ"
+"role.sonarU.blurb" : "アンテナを設置せよ"
+
+# Document
+
+"role.sonarU.doc" : "キルを検知するアンテナを設置します"
+"role.sonarU.ability.title" : "固有能力 "アンテナ""
+"role.sonarU.ability.main" : "アンテナを設置することが出来ます。<br>アンテナの周囲でキルが起こった場合、ノイズで全プレイヤーに通知されます。"
+"role.sonarU.ability.place" : "<title>設置</title>アンテナを設置します。設置したアンテナは自分にしか見えません。"
+"role.sonarU.ability.antenna" : "<title>アンテナ</title>有効化しているアンテナです。周囲でキルが起こると通知します。"
+"role.sonarU.ability.break" : "<title>壊れたアンテナ</title>一度キルを検知するとアンテナは壊れてしまいます。<br>この状態のアンテナはキルを検知できません。"
+　
+# Options
+
+"options.role.sonarU.detail" : "ソナーはキルを検知するアンテナを設置することが出来るクルーメイトです。"
+"options.role.sonarU.placeCooldown" : "設置クールダウン"
+"options.role.sonarU.numOfPlace" : "アンテナ設置可能回数"
+"options.role.sonarU.sonarRange" : "キル検知範囲"
+"options.role.sonarU.noiseDuration" : "通知持続時間"
+ 
+# Game
+
+
+# UI
+
+"button.label.sonarU.place" : "設置"
+
+# Stats
+
+"stats.sonarU.place" : "アンテナの設置回数"
+"stats.sonarU.noise" : "キルの検知回数"
+
+# Titles

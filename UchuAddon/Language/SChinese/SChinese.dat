@@ -13,6 +13,7 @@
 "options.role.admiralU.notGuess" : "禁止猜测"
 "options.role.admiralU.privateNameGuess" : "允许猜测未公开职业的提督"
 "options.role.admiralU.detail" : "提督是能防止被放逐的船员。使用能力的会议中，所有放逐判定将失效。<br>即使未使用能力，自身被投票放逐时也会避免放逐。"
+"role.admiralU.doc" : "提督是能防止被放逐的船员。使用能力的会议中，所有放逐判定将失效。<br>即使未使用能力，自身被投票放逐时也会避免放逐。"
 "button.label.admiral" : "绝对权限"
 "role.admiralU.message1" : "本轮提督不允许任何人被放逐!"
 "role.admiralU.hudText" : "剩余技能使用次数"
@@ -22,6 +23,7 @@
 "role.alchemistU.short" : "炼"
 "role.alchemistU.blurb" : "向死而生的调和"
 "options.role.alchemistU.detail" : "可对尸体进行炼金，可以通过炼制的子弹在会议击杀玩家。"
+"role.alchemistU.doc" : "可对尸体进行炼金，可以通过炼制的子弹在会议击杀玩家。"
 "alchemistU.leftalchemy" : "剩余炼金弹"
 "options.role.AlchemistU.AlchemyCooldown" : "炼金冷却时间"
 "options.role.AlchemistU.alchemycount" : "单次炼金可获得的炼金弹数量"
@@ -38,12 +40,14 @@
 "options.role.lighterU.blackoutIgnore" :  "无视黑灯"
 "button.label.light" : "灯光"
 "options.role.lighterU.detail" : "执灯人可以扩大自身的视野"
+"role.lighterU.doc" : "执灯人可以扩大自身的视野"
 
 # 面包师
 "role.bakeryU.name" : "面包师"
 "role.bakeryU.short" : "面"
 "role.bakeryU.blurb" : "新鲜出炉的烤面包!"
 "options.role.bakeryU.detail" : "面包师是制作面包的船员。只要该角色存活，会议结束时就会显示 “面包已制作完成” 的通知 "
+"role.bakeryU.doc" : "面包师是制作面包的船员。只要该角色存活，会议结束时就会显示 “面包已制作完成” 的通知 "
 "options.role.bakeryU.passBreadCooldown" : "递出面包冷却时间"
 "options.role.bakeryU.breadPerMeeting" : "每次会议面包增加数量"
 "role.bakeryU.message3" :"<color=#e6b422 > 今晚感觉会有面包庆典呢…！</color>"
@@ -56,6 +60,7 @@
 "role.polarisU.short" : "北"
 "role.polarisU.blurb" : "苍天的引导星"
 "options.role.polarisU.detail" : "北极星是可以击杀的船员，并且可以对尸体使用幻视技能。"
+"role.polarisU.doc" : "北极星是可以击杀的船员，并且可以对尸体使用幻视技能。"
 "options.role.polarisU.numofKillOption" : "可击杀次数"
 "options.role.polarisU.killCoolDownOption" : "击杀冷却时间"
 "options.role.polarisU.killHidingPlayer" : "可击杀管道中的玩家"
@@ -73,6 +78,7 @@
 "role.slimeU.short" : "史"
 "role.slimeU.blurb" : "变幻自在"
 "options.role.slimeU.detail" : "史莱姆能够伸缩自身身体。"
+"role.slimeU.doc" : "史莱姆能够伸缩自身身体。"
 "options.role.slimeU.JumboCoolDown" : "巨大化冷却时间"
 "options.role.slimeU.JumboDuration" : "巨大化持续时间"
 "options.role.slimeU.JumboSize" : "巨大化尺寸"
@@ -93,6 +99,7 @@
 "role.superVisorU.short" : "特"
 "role.superVisorU.blurb" : "飞船的管理者"
 "options.role.superVisorU.detail" : "这是一名可以随时随地查看管理地图的船员。"
+"role.superVisorU.doc" : "这是一名可以随时随地查看管理地图的船员。"
 "options.role.superVisorU.group.charge" : "充电设置组"
 "options.role.superVisorU.charge" : "充电功能"
 "options.role.superVisorU.AdminCharge" : "初始充电量"
@@ -103,19 +110,21 @@
 "role.visorModifierU.short" : "特"
 "role.visorModifierU.blurb": "飞船的管理者"
 "options.role.visorModifierU.detail" : "这是一名可以随时随地查看管理地图的船员。"
-
+"role.visorModifierU.doc" : "这是一名可以随时随地查看管理地图的船员。"
 
 #正义的瞭望者
 "role.NicehawkU.name" : "正义的瞭望者"
 "role.NicehawkU.short" : "正瞭"
 "role.NicehawkU.blurb" : "暗中守护船员"
 "options.role.NicehawkU.detail" : "正义的瞭望者是能够扩大自身视野的船员。"
+"role.NicehawkU.doc" : "正义的瞭望者是能够扩大自身视野的船员。"
 
 # 正义的监控员
 "role.niceObserverU.name" : "正义的监控员"
 "role.niceObserverU.short" : "正监"
 "role.niceObserverU.blurb" : "放置摄像头"
 "options.role.niceObserverU.detail" : "正义的监控员是能够设置定点摄像头的船员。会议后摄像头生效，可在任意时机监视摄像头附近区域。"
+"role.niceObserverU.doc" : "正义的监控员是能够设置定点摄像头的船员。会议后摄像头生效，可在任意时机监视摄像头附近区域。"
 "options.role.obaserverU.maxCameraCount" : "摄像头最大数量"
 
 # 正义的塑型师
@@ -123,6 +132,7 @@
 "role.nicedecoratorU.short" : "正塑"
 "role.nicedecoratorU.blurb" : "赋彩之手"
 "options.role.nicedecoratorU.detail" : "正义的塑型师可以更改其他玩家的职业。"
+"role.nicedecoratorU.doc" : "正义的塑型师可以更改其他玩家的职业。"
 
 # 免疫者
 "role.guardianU.name" : "免疫者"
@@ -131,6 +141,7 @@
 "options.role.guardianU.shieldLimit" : "次数限制护盾"
 "options.role.guardianU.numOfShield" : "护盾最大次数"
 "options.role.guardianU.detail" : "免疫者是完成任务后，可获得防止被击杀护盾的船员。"
+"role.guardianU.doc" : "免疫者是完成任务后，可获得防止被击杀护盾的船员。"
 "options.role.guardianU.shieldTask" : "解锁护盾任务占比"
 
 #稻草人
@@ -139,6 +150,7 @@
 "role.waraningyouU.blurb" : "诅咒他人者，自身也将陷入同样困境"
 "role.waraningyouU.hudText" : "当前票数"
 "options.role.waraningyouU.detail" : " 稻草人是能够储存投向自身的票数，并通过诅咒按钮使用储存票数的船员。自己投的票无法储存 "
+"role.waraningyouU.doc" : " 稻草人是能够储存投向自身的票数，并通过诅咒按钮使用储存票数的船员。自己投的票无法储存 "
 "options.role.waraningyouU.allowSkip" : "使用诅咒时允许跳过投票"
 "options.role.waraningyouU.defaultVote" : "票数初始值"
 "button.label.curse" : "诅咒"
@@ -155,6 +167,7 @@
 "options.role.hawkU.hawkeyeStop" : "开启望眼镜时无法移动"
 "button.label.hawkeye" : "望眼镜"
 "options.role.hawkU.detail" : "邪恶的瞭望者是能够扩大自身视野的内鬼。"
+"role.hawkU.doc" : "邪恶的瞭望者是能够扩大自身视野的内鬼。"
 
 # 召陨师
 "role.eclipseU.name" : "召陨师"
@@ -173,6 +186,7 @@
 "button.label.Emark" : "标记"
 "button.label.Eblast" : "陨石"
 "options.role.eclipseU.detail" : " 召陨师是能够召唤陨石进行击杀的内鬼。陨石即使命中队友，也会无差别击杀 "
+"role.eclipseU.doc" : " 召陨师是能够召唤陨石进行击杀的内鬼。陨石即使命中队友，也会无差别击杀 "
 "Explosion" : "轰炸"
 "statistics.Bomb" : "轰炸"
 
@@ -181,6 +195,7 @@
 "role.EraserU.short" : "抹"
 "role.EraserU.blurb" : "抹除你们的职业"
 "options.role.EraserU.detail" : "抹除者是能够强制将其他玩家的角色改为船员。"
+"role.EraserU.doc" : "抹除者是能够强制将其他玩家的角色改为船员。"
 "options.role.EraserU.EraseCooldown" : "抹除冷却时间"
 "options.role.EraserU.numofErase" : "抹除次数"
 "button.label.Erase" : "抹除"
@@ -190,6 +205,7 @@
 "role.evildecoratorU.short" : "邪塑"
 "role.evildecoratorU.blurb" : "终焉塑型"
 "options.role.evildecoratorU.detail" : "邪恶的塑型师可以更改其他玩家的职业。"
+"role.evildecoratorU.doc" : "邪恶的塑型师可以更改其他玩家的职业。"
 "options.role.evildecoratorU.maxdecorationCount" : "塑型技能使用次数"
 "options.role.evildecoratorU.decorationCoolDown" : "塑型技能冷却时间"
 "options.role.evildecoratorU.ImpostorgiveFilter" : "内鬼可转换职业筛选器"
@@ -201,6 +217,7 @@
 "role.harvesterU.short" : "收"
 "role.harvesterU.blurb" : "变成星星再会吧"
 "options.role.harvesterU.detail" : "收割者是可以在会议中查看死者职业的伪装者。"
+"role.harvesterU.doc" : "收割者是可以在会议中查看死者职业的伪装者。"
 "options.role.harvesterU.numOfHarvest" : "使用回收最大数"
 "options.role.harvesterU.numOfHarvestPerMeeting" : "每轮会议的回收数"
 "options.role.harvesterU.harvestAddKill" : "击杀增加回收数"
@@ -218,12 +235,14 @@
 "button.label.self" : "自身视角"
 "button.label.next" : "下一个"
 "options.role.observerU.detail" : " 邪恶的监控员是能够设置定点摄像头的内鬼。会议后摄像头生效，可在任意时机监视摄像头附近区域。"
+"role.observerU.doc" : " 邪恶的监控员是能够设置定点摄像头的内鬼。会议后摄像头生效，可在任意时机监视摄像头附近区域。"
 
 # 异能者
 "role.spectrumU.name" : "异能者"
 "role.spectrumU.short" : "异能"
 "role.spectrumU.blurb" : "违规改造"
 "options.role.spectrumU.detail" : "异能者是可使用部分船员阵营职业技能的伪装者。"
+"role.spectrumU.doc" : "异能者是可使用部分船员阵营职业技能的伪装者。"
 "options.role.spectrumU.killCooldown" : "击杀冷却时间"
 "options.role.spectrumU.prefix" : ""
 "options.role.count.custom" : "内鬼自定义分配人数"
@@ -236,6 +255,7 @@
 "role.magicianU.shor" : "魔"
 "role.magicianU.blurb" : "奇术的操控者"
 "options.role.magicianU.detail" : "魔法师是可以打乱玩家位置的伪装者"
+"role.magicianU.doc" : "魔法师是可以打乱玩家位置的伪装者"
 "options.role.magicianU.magicCooldown" : "魔法冷却时间"
 "options.role.magicianU.numOfMagic" : "魔法可使用次数"
 "button.label.magic" : "魔法"
@@ -245,6 +265,7 @@
 "role.rocketU.short" : "火"
 "role.rocketU.blurb" : "大气层巡航，为您服务"
 "options.role.rocketU.detail" : "火箭兵是可以抓取其他玩家并发射升空的伪装者。<br>被发射的玩家不会留下尸体，但全体玩家都会听到巨大的声响"
+"role.rocketU.doc" : "火箭兵是可以抓取其他玩家并发射升空的伪装者。<br>被发射的玩家不会留下尸体，但全体玩家都会听到巨大的声响"
 "options.role.rocketU.holdCooldown" : "抓取冷却时间"
 "options.role.rocketU.nextHoldCooldown" : "抓取第二名及后续目标的冷却时间"
 "options.role.rocketU.launchCooldown" : "发射冷却时间"
@@ -257,6 +278,7 @@
 "role.warlockU.short" : "术"
 "role.warlockU.blurb" : "他人的支配者"
 "options.role.warlockU.detail" : "术士可以诅咒玩家。<br>被诅咒的玩家会被术士强制杀死附近的玩家。"
+"role.warlockU.doc" : "术士可以诅咒玩家。<br>被诅咒的玩家会被术士强制杀死附近的玩家。"
 "options.role.warlockU.curseKillCooldown" : "咒杀冷却"
 "options.role.warlockU.curseCooldown" : "诅咒冷却"
 "options.role.warlockU.canKillTeamPlayer" : "可以诅咒相同阵营的玩家"
@@ -270,6 +292,7 @@
 "role.witchU.short" : "女"
 "role.witchU.blurb" : "记下女巫的诅咒"
 "options.role.witchU.detail" : "女巫是能够对其他玩家施加诅咒的内鬼。被施加诅咒的玩家，若在会议中未放逐或指认女巫，将会死亡。"
+"role.witchU.doc" : "女巫是能够对其他玩家施加诅咒的内鬼。被施加诅咒的玩家，若在会议中未放逐或指认女巫，将会死亡。"
 "options.role.witchU.spellCooldown" : "诅咒冷却时间"
 "options.role.witchU.numOfOneTurnSpell" : "诅咒一回合最大使用技能"
 "option.role.witchU.witchNormalKill" : "可以使用普通击杀"
@@ -285,6 +308,7 @@
 "role.xinobiU.short" : "忍"
 "role.xinobiU.blurb" : "藏刃于心"
 "options.role.xinobiU.detail" : "忍术师是可变化为场景物件的伪装者。"
+"role.xinobiU.doc" : "忍术师是可变化为场景物件的伪装者。"
 "options.role.xinobiU.killCooldown" : "击杀冷却时间"
 "options.role.xinobiU.xinobiUVentCooldown" : "遁形冷却时间"
 "button.label.xinobiU.possess" : "变化"
@@ -298,6 +322,7 @@
 "role.amnesiaU.short" : "失忆"
 "role.amnesiaU.blurb" : "记忆的空壳"
 "options.role.amnesiaU.detail" : "失忆者是通过通报尸体来变成尸体职业的第三方阵营。<br>失忆者没有胜利条件，必须通过报告尸体来想起自己是谁。"
+"role.amnesiaU.doc" : "失忆者是通过通报尸体来变成尸体职业的第三方阵营。<br>失忆者没有胜利条件，必须通过报告尸体来想起自己是谁。"
 "options.role.amnesiaU.amnesiaAction" : "职业变化时间"
 "options.role.amnesiaU.amnesiaAction.meetingStart" : "会议开始"
 "options.role.amnesiaU.amnesiaAction.meetingEnd" : "会议结束"
@@ -310,6 +335,7 @@
 "role.seedU.short" : "种"
 "role.seedU.blurb" : "泪水之花"
 "options.role.seedU.detail" : " 种子是中立角色，只要使用共生技能的对象获胜，自身也会额外获胜。"
+"role.seedU.doc" : " 种子是中立角色，只要使用共生技能的对象获胜，自身也会额外获胜。"
 "options.role.seedU.seedCooldown" : "共生冷却时间"
 "options.role.seedU.numOfSeed" : "共生可使用次数"
 "options.role.seedU.dieBlockWins" : "死亡时阻止自身获胜"
@@ -327,6 +353,7 @@
 "role.tunaU.short" : "鱼"
 "role.tunaU.blurb" : "不要停下来！"
 "options.role.tunaU.detail" : "金枪鱼是只要停下来就会死亡的第三方阵营。<br>根据设置，<b>金枪鱼指标</b>可能需要为满值时才可以获胜。"
+"role.tunaU.doc" : "金枪鱼是只要停下来就会死亡的第三方阵营。<br>根据设置，<b>金枪鱼指标</b>可能需要为满值时才可以获胜。"
 "options.role.tunaU.tunaAction" : "模式设置"
 "options.role.tunaU.tunaAction.usually" : "普通"
 "options.role.tunaU.tunaAction.total" : "累计"
@@ -346,12 +373,14 @@
 "role.tunaModiU.short" : "T"
 "role.tunaModiU.generalBlurb" : "不要停下来！"
 "options.role.tunaModiU.detail" : "这是一个停止一段时间就会死亡的附加职业。"
+"role.tunaModiU.doc" : "这是一个停止一段时间就会死亡的附加职业。"
 
 # 爱情爆破师
 "role.loversbreakerU.name" : "爱情爆破师"
 "role.loversbreakerU.short" : "爱情"
 "role.loversbreakerU.blurb" : "爱情什么的都爆炸吧"
 "options.role.loversbreakerU.detail" : "爱情爆破师是需要爆破恋人的第三方阵营。"
+"role.loversbreakerU.doc" : "爱情爆破师是需要爆破恋人的第三方阵营。"
 "options.role.loversbreakerU.ExpCooldown" : "爆破冷却"
 "options.role.loversbreakerU.NumOfExp" : "获胜需要一定爆破次数"
 "options.role.loversbreakerU.NumOfDeathExp" : "可失败爆破次数"
@@ -360,50 +389,50 @@
 # Document
 "role.loversbreakerU.ability.title" : "固有能力【爱情定罪】"
 "role.loversbreakerU.ability.main" : "爆破恋人。爆破效果只对自己可见。如果所有爆破技能都失败了，那么爱情爆破师会自杀。"
-"role.loversbreakerU.ability.Exp" : "爆破恋人。"
+"role.loversbreakerU.ability.exp" : "爆破恋人。"
 "role.loversbreakerU.tips" : "・爱情爆破师不会持有恋人附加。"
 
 # 附加职业
 
 # 报警人
 "role.alertU.name" : "报警人"
-"role.alertU.short" : "●"
 "role.alertU.generalBlurb" : "紧急召集"
 "role.alertU.blurb" : "速速集结"
 "options.role.alertU.detail" : "执扭人是可远程触发紧急会议的角色强化模组。"
+"role.alertU.doc" : "执扭人是可远程触发紧急会议的角色强化模组。"
 
 # 冲刺者
 "role.expressU.name" : "冲刺者"
-"role.expressU.short" : "≫"
 "role.expressU.generalBlurb" : "光一般的速度"
 "options.role.expressU.detail" : "移动速度始终处于提升"
+"role.expressU.doc" : "移动速度始终处于提升"
 "options.ExpressUSpeed" : "速度倍率"
 
 # 隐形
 "role.invisibleU.name" : "隐形"
-"role.invisibleU.short" : "∅"
 "role.invisibleU.generalBlurb" : "无貌之影"
 "options.role.invisibleU.detail" : "隐形是无法主动触发,始终处于透明状态的强化类型。仅内鬼可看到这个附加。"
+"role.invisibleU.doc" : "隐形是无法主动触发,始终处于透明状态的强化类型。仅内鬼可看到这个附加。"
 
 # 免疫者
 "role.GuardingU.name" : "免疫者"
-"role.GuardingU.short" : "♦"
 "role.GuardingU.generalBlurb" : "神明庇佑"
 "options.role.GuardingU.detail" : "可免疫一次致命攻击。"
+"role.GuardingU.doc" : "可免疫一次致命攻击。"
 
 # 夜月
 "role.moonU.name" : "夜月"
-"role.moonU.short" : "◖"
 "role.moonU.generalBlurb" : "月下之眼"
 "role.moonU.blurb" : "月下之眼"
 "options.role.moonU.detail" : "夜月是不受停电效果影响的角色副职业。"
+"role.moonU.doc" : "夜月是不受停电效果影响的角色副职业。"
 
 # 狐灵
 "role.spectrePossessionU.name" : "狐灵"
-"role.spectrePossessionU.short" : "*"
 "role.spectrePossessionU.generalBlurb" : "美丽的诅咒"
 "role.spectrePossessionU.blurb" : "<color=#b998c5>然后，为他献上供奉</color>"
 "options.role.spectrePossessionU.detail" : "这是一个只有伪装者和船员才会获得的附加能力。<br>持有这个附加的玩家会变成狐妖阵营。"
+"role.spectrePossessionU.doc" : "这是一个只有伪装者和船员才会获得的附加能力。<br>持有这个附加的玩家会变成狐妖阵营。"
 "options.role.spectrePossessionU.group.fanaticism" : "狂信者设定"
 "options.role.spectrePossessionU.fanaticism" : "狂信者能力"
 "options.role.spectrePossessionU.fanaticismLimit" : "狂信者设置"
@@ -414,9 +443,9 @@
 
 # 计时者
 "role.timerU.name" : "计时者"
-"role.timerU.short" : "∞"
 "role.timerU.generalBlurb" : "精准的记录员"
 "options.role.timerU.detail" : "计时者可以记录每回合的时间"
+"role.timerU.doc" : "计时者可以记录每回合的时间"
 "role.timerU.TimerTxt" : "回合用时"
 
 # 监视
@@ -424,6 +453,7 @@
 "role.watchingU.short" : "⊙"
 "role.watchingU.generalBlurb" : "监视玩家的投票"
 "options.role.watchingU.detail" : "能够看到其他玩家的得票"
+"role.watchingU.doc" : "能够看到其他玩家的得票"
 
 # 称号
 

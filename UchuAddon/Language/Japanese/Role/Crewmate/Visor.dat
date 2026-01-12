@@ -11,6 +11,7 @@
 # Document
 
 "role.superVisorU.doc" : "ポータブルアドミンを持つクルーメイトです。"
+"role.visorModifierU.doc" : "ポータブルアドミンを持つモディファイアです。"
 
 # Options
 

@@ -6,7 +6,8 @@
 		    "Name" : "Anonymous_LINKLOST",
 		    "Bounce": "false",
 		    "Adaptive": "false",
-            "HideHands": "true",
+          "HideHands": "true",
+          "Hidden" :  "true",
             "FPS": "30",
             "Main": {
                 "Address": "LinkLostU.png",

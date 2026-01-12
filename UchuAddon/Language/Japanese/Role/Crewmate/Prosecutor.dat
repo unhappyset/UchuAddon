@@ -1,0 +1,31 @@
+# Assignable
+
+"role.prosecutorU.name" : "プロセキューター"
+"role.prosecutorU.short" : "プロ"
+"role.prosecutorU.blurb" : "地獄で会おうぜ"
+
+# Document
+
+"role.prosecutorU.doc" : "プレイヤーを強制追放します"
+"role.prosecutorU.ability.title" : "固有能力 "有罪判決""
+"role.prosecutorU.ability.main" : "プレイヤーを強制追放することが出来ます。"
+"role.prosecutorU.ability.prosecute" : "<title>プロセキュート</title>使用後、投票したプレイヤーを強制追放します。"
+　
+# Options
+
+"options.role.prosecutorU.detail" : "プロセキューターはプレイヤーを強制追放するクルーメイトです。"
+"options.role.prosecutorU.numOfProsecute" : "プロセキュート使用可能回数"
+"options.role.prosecutorU.prosecuteCrewmateCheck" : "対象がクルーメイトの場合死亡する"
+
+# Game
+
+
+# UI
+
+"button.label.prosecute" : "プロセキュート"
+"role.prosecutorU.hudText" : "残りプロセキュート回数"
+　
+# Stats
+
+
+# Titles

@@ -46,7 +46,7 @@ using Vector3 = UnityEngine.Vector3;
 
 namespace Hori.Scripts.Role.Crewmate;
 
-public class SonarU : DefinedSingleAbilityRoleTemplate<SonarU.Ability>, DefinedRole
+public class SonarU : DefinedSingleAbilityRoleTemplate<SonarU.Ability>, DefinedRole,IAssignableDocument
 {
     public SonarU() : base("sonarU", new(52, 115, 68), RoleCategory.CrewmateRole, NebulaTeams.CrewmateTeam, [NumOfPlace,PlaceCooldown,SonarRange,NoiseDuration])
     {
@@ -55,14 +55,15 @@ public class SonarU : DefinedSingleAbilityRoleTemplate<SonarU.Ability>, DefinedR
 
     static private FloatConfiguration PlaceCooldown = NebulaAPI.Configurations.Configuration("options.role.sonarU.placeCooldown", (2.5f, 60f, 2.5f), 30f, FloatConfigurationDecorator.Second);
     static private IntegerConfiguration NumOfPlace = NebulaAPI.Configurations.Configuration("options.role.sonarU.numOfPlace", (1, 10), 2);
-    static private FloatConfiguration SonarRange = NebulaAPI.Configurations.Configuration("options.role.sonarU.placeCooldown", (0.25f, 5f, 0.25f), 1f, FloatConfigurationDecorator.Ratio);
+    static private FloatConfiguration SonarRange = NebulaAPI.Configurations.Configuration("options.role.sonarU.sonarRange", (0.25f, 10f, 0.25f), 1f, FloatConfigurationDecorator.Ratio);
     static public readonly FloatConfiguration NoiseDuration = NebulaAPI.Configurations.Configuration("options.role.sonarU.noiseDuration", (1f, 10f, 1f), 3f, FloatConfigurationDecorator.Second);
 
     public override Ability CreateAbility(GamePlayer player, int[] arguments) => new Ability(player, arguments.GetAsBool(0));
 
 
     static public SonarU MyRole = new();
-    static private readonly GameStatsEntry StatsSample = NebulaAPI.CreateStatsEntry("stats.sampleU.sampleSkill", GameStatsCategory.Roles, MyRole);
+    static private readonly GameStatsEntry StatsPlace = NebulaAPI.CreateStatsEntry("stats.sonarU.place", GameStatsCategory.Roles, MyRole);
+    static private readonly GameStatsEntry StatsNoise = NebulaAPI.CreateStatsEntry("stats.sonarU.noise", GameStatsCategory.Roles, MyRole);
 
     [NebulaPreprocess(PreprocessPhase.PostRoles)]
     public class SonarAntenna : NebulaSyncStandardObject, IGameOperator
@@ -71,7 +72,7 @@ public class SonarU : DefinedSingleAbilityRoleTemplate<SonarU.Ability>, DefinedR
         private static MultiImage AntennaImage = NebulaAPI.AddonAsset.GetResource("SonarAntenna.png")!.AsMultiImage(1, 1, 310f)!;
         //private static SpriteLoader AntennaImage = SpriteLoader.FromResource("SonarAntenna.png", 100f);
 
-        public SonarAntenna(Vector2 pos) : base(pos, ZOption.Back, true, AntennaImage.GetSprite(0))
+        public SonarAntenna(Vector2 pos) : base(pos, ZOption.Just, true, AntennaImage.GetSprite(0))
         {
         }
         static SonarAntenna()
@@ -87,7 +88,7 @@ public class SonarU : DefinedSingleAbilityRoleTemplate<SonarU.Ability>, DefinedR
         private static MultiImage AntennaImage = NebulaAPI.AddonAsset.GetResource("SonarAntennaBreak.png")!.AsMultiImage(1, 1, 310f)!;
         //private static SpriteLoader AntennaImage = SpriteLoader.FromResource("SonarAntenna.png", 100f);
 
-        public SonarAntennaBreak(Vector2 pos) : base(pos, ZOption.Back, true, AntennaImage.GetSprite(0))
+        public SonarAntennaBreak(Vector2 pos) : base(pos, ZOption.Just, true, AntennaImage.GetSprite(0))
         {
         }
         static SonarAntennaBreak()
@@ -95,10 +96,19 @@ public class SonarU : DefinedSingleAbilityRoleTemplate<SonarU.Ability>, DefinedR
             RegisterInstantiater(MyTag, (args) => new SonarAntenna(new Vector2(args[0], args[1])));
         }
     }
-
-    public class Ability : AbstractPlayerUsurpableAbility, IPlayerAbility
+    static private readonly Virial.Media.Image PlaceImage = NebulaAPI.AddonAsset.GetResource("SonarPlaceButton.png")!.AsImage(115f)!;
+    static private readonly Virial.Media.Image AntennaDocument = NebulaAPI.AddonAsset.GetResource("SonarAntennaDocument.png")!.AsImage(115f)!;
+    static private readonly Virial.Media.Image AntennaDocumentBreak = NebulaAPI.AddonAsset.GetResource("SonarAntennaBreakDocument.png")!.AsImage(115f)!;
+    bool IAssignableDocument.HasTips => false;
+    bool IAssignableDocument.HasAbility => true;
+    IEnumerable<AssignableDocumentImage> IAssignableDocument.GetDocumentImages()
     {
-        static private readonly Virial.Media.Image PlaceImage = NebulaAPI.AddonAsset.GetResource("SonarPlaceButton.png")!.AsImage(115f)!;
+        yield return new(PlaceImage, "role.sonarU.ability.place");
+        yield return new(AntennaDocument, "role.sonarU.ability.antenna");
+        yield return new(AntennaDocumentBreak, "role.sonarU.ability.break");
+    }
+    public class Ability : AbstractPlayerUsurpableAbility, IPlayerAbility
+    {  
         int leftPlace = NumOfPlace;
         List<Vector2> sonarPositions = new();
         List<NebulaSyncStandardObject> sonarAntennas = new();
@@ -117,7 +127,7 @@ public class SonarU : DefinedSingleAbilityRoleTemplate<SonarU.Ability>, DefinedR
                 {
                     var pos = new Vector2(
                     PlayerControl.LocalPlayer.transform.localPosition.x,
-                    PlayerControl.LocalPlayer.transform.localPosition.y - 0.15f);
+                    PlayerControl.LocalPlayer.transform.localPosition.y - 0.05f);
 
                     var obj = NebulaSyncObject.LocalInstantiate(SonarAntenna.MyTag,[pos.x, pos.y]).SyncObject as NebulaSyncStandardObject;
                     sonarAntennas.Add(obj!);
@@ -125,6 +135,7 @@ public class SonarU : DefinedSingleAbilityRoleTemplate<SonarU.Ability>, DefinedR
 
                     leftPlace--;
                     PlaceButton.UpdateUsesIcon(leftPlace.ToString());
+                    StatsPlace.Progress();
                     PlaceButton.StartCoolDown();
                 };
                 /*var TestButton = NebulaAPI.Modules.AbilityButton(this, MyPlayer, Virial.Compat.VirtualKeyInput.Ability, PlaceCooldown, "sonarU.place", PlaceImage).SetAsUsurpableButton(this);
@@ -150,6 +161,7 @@ public class SonarU : DefinedSingleAbilityRoleTemplate<SonarU.Ability>, DefinedR
                 if (antennaPos.Distance(deadPos) <= SonarRange)
                 {
                     RpcSonarNoise.Invoke(deadPos);
+                    StatsNoise.Progress();
 
                     var target = sonarAntennas.OrderBy(a => a.Position.Distance(deadPos)).First();
                     sonarAntennas.Remove(target);

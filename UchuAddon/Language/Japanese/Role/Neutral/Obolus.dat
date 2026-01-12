@@ -1,0 +1,40 @@
+# Assignable
+
+"role.obolusU.name" : "オボルス"
+"role.obolusU.short" : "オボ"
+"role.obolusU.blurb" : "最後の一撃"
+"teams.obolusU" : "オボルス"
+
+# Document
+
+"role.obolusU.doc" : "インポスターをキルすると勝利します。<br>ただし、キルは1ターンに1度しか行えません"
+"document.tip.winCond.obolusU.title" : "特殊勝利"
+"document.tip.winCond.obolusU" : "インポスターをキルすると勝利します。"
+
+# Options
+
+"options.role.obolusU.detail" : "オボルスはインポスターをキルすると勝利するニュートラルです。<br>キルは1ターンに1度しか行うことが出来ません"
+"options.role.obolusU.killCooldown" : "キルクールダウン"
+"options.role.obolusU.killShieldTurn" : "キル封印ターン数"
+"options.role.obolusU.killShieldTurn.detail" : "<b>設定ターン</b>が経過するまで、キルボタンをロックします"
+"options.role.obolusU.canKillHidingPlayer" : "隠れているプレイヤーをキル可能"
+"options.role.obolusU.impostorVision" : "インポスター視界"
+"options.role.obolusU.blackOutVision" : "停電の影響を受けない"
+"options.role.obolusU.extraWin" : "追加勝利"
+"options.role.obolusU.extraWin.detail" : "勝利条件を満たすと追加勝利するようになります。"
+"options.role.obolusU.group.win" : "勝利拡張設定"
+"options.role.obolusU.jackalOptions" : "<color=#08bef5>ジャッカル</color>へのキルでも勝利可能"
+"options.role.obolusU.tyrantOptions" : "<color=#b98900>タイラント</color>へのキルでも勝利可能"
+
+# Game
+
+
+# UI
+
+
+# Stats
+
+"end.obolusU" : "オボルス勝利"
+"end.extra.aliceU" : "<color=#FFFFFF>+</color> オボルス"
+
+# Titles

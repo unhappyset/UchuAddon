@@ -183,7 +183,22 @@ public class AllVentConnectAbility : FlexibleLifespan, IGameOperator
 
                 GetAllVent("StorageVent")!.Center = activate ? GetAllVent("CommunicationsVent") : null;
                 GetAllVent("CommunicationsVent")!.Center = activate ? GetAllVent("StorageVent") : null;
+
+                if (GetAllVent("MiningPitVent") != null && GetAllVent("GemVent") != null)
+                {
+                    GetAllVent("MiningPitVent")!.Left = activate ? GetAllVent("CommunicationsVent") : null;
+                    GetAllVent("CommunicationsVent")!.Center = activate ? GetAllVent("MiningPitVent") : null;
+
+                    GetAllVent("GemVent")!.Right = activate ? GetAllVent("SouthEastJungleVent") : null;
+                    GetAllVent("SouthEastJungleVent")!.Right = activate ? GetAllVent("GemVent") : null;
+                }
                 break;
         }
+    }
+
+    [OnlyMyPlayer]
+    void VentEnters(PlayerVentEnterEvent ev)
+    {
+        AllVentConnects(true);
     }
 }
