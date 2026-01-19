@@ -85,7 +85,7 @@ public class AnchorU : DefinedRoleTemplate, DefinedRole, IAssignableDocument
 
     //マップレイヤー
     private static readonly SpriteLoader mapButtonSprite = SpriteLoader.FromResource("Nebula.Resources.CannonButton.png", 100f);
-    static private readonly Image mapButtonInnerSprite = NebulaAPI.AddonAsset.GetResource("AnchorInner.png")!.AsImage(350f)!;
+    static private readonly Image mapButtonInnerSprite = NebulaAPI.AddonAsset.GetResource("AnchorInner.png")!.AsImage(375f)!;
     public class AnchorMapLayer : MonoBehaviour
     {
         static AnchorMapLayer() => ClassInjector.RegisterTypeInIl2Cpp<AnchorMapLayer>();
