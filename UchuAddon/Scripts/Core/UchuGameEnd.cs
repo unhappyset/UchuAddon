@@ -54,7 +54,8 @@ public class UchuGameEnd
     public static GameEnd ObolusWin = NebulaAPI.Preprocessor!.CreateEnd("obolusU", new Virial.Color(189, 135, 26), 35);
     public static GameEnd BaphometWin = NebulaAPI.Preprocessor!.CreateEnd("baphometU", new Virial.Color(72, 40, 153), 61);
     public static GameEnd LoversBreakerUTeamWin = NebulaAPI.Preprocessor!.CreateEnd("loversbreakerU", new Virial.Color(235, 0, 192), 65);
-    public static GameEnd CrewmateChickenWin = NebulaAPI.Preprocessor!.CreateEnd("crewmate", new Virial.Color(255,255,255), 127);
+    public static GameEnd AnchorUTeamWin = NebulaAPI.Preprocessor!.CreateEnd("anchorU", new Virial.Color(8, 0, 237), 70);
+    public static GameEnd CrewmateChickenWin = NebulaAPI.Preprocessor!.CreateEnd("crewmate", new Virial.Color(255, 255, 255), 127);
 
     //public static ExtraWin BinahExtra = NebulaAPI.Preprocessor!.CreateExtraWin("binahU", new Virial.Color(44, 171, 78));
     public static ExtraWin AliceExtra = NebulaAPI.Preprocessor!.CreateExtraWin("aliceU", new Virial.Color(255, 255, 15));
@@ -67,6 +68,7 @@ public class UchuGameEnd
         RegisterWinCondTip(LoversBreakerUTeamWin, () => (Scripts.Role.Neutral.LoversBreakerU.MyRole as ISpawnable).IsSpawnable && !Scripts.Role.Neutral.LoversBreakerU.TakeoverWin, "loversbreakerU.normal");
         RegisterWinCondTip(AliceWin, () => GeneralConfigurations.NeutralSpawnable && (Scripts.Role.Neutral.AliceU.MyRole as ISpawnable).IsSpawnable && !Scripts.Role.Neutral.AliceU.ExtraWin, "aliceU");
         RegisterWinCondTip(ObolusWin, () => GeneralConfigurations.NeutralSpawnable && (Scripts.Role.Neutral.ObolusU.MyRole as ISpawnable).IsSpawnable && !Scripts.Role.Neutral.ObolusU.ExtraWin, "obolusU");
+        RegisterWinCondTip(AnchorUTeamWin, () => GeneralConfigurations.NeutralSpawnable && (Scripts.Role.Neutral.AnchorU.MyRole as ISpawnable).IsSpawnable, "anchorU");
         //RegisterWinCondTip(BinahTeamWin, () => GeneralConfigurations.NeutralSpawnable && (Scripts.Role.Neutral.BinahU.MyRole as ISpawnable).IsSpawnable, "binahU");
     }
     private static void RegisterWinCondTip(GameEnd gameEnd, Func<bool> predicate, string name, Func<string, string>? decorator = null)
