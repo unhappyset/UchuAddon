@@ -56,10 +56,12 @@ using Vector3 = UnityEngine.Vector3;
 
 namespace Hori.Scripts.Role.Impostor;
 
+[NebulaRPCHolder]
 public class XinobiU : DefinedRoleTemplate, DefinedRole,IAssignableDocument
 {
     private XinobiU() : base("xinobiU", NebulaTeams.ImpostorTeam.Color, RoleCategory.ImpostorRole, NebulaTeams.ImpostorTeam, [KillCoolDown,XinobiVentCooldown, ClairvoyanceOption,VentConfiguration])
     {
+        base.ConfigurationHolder!.Illustration = NebulaAPI.AddonAsset.GetResource("RoleImage/Xinobi.png")!.AsImage(115f);
         ConfigurationHolder?.AddTags(AddonConfigurationTags.TagUchuAddon);
     }
     static private IRelativeCooldownConfiguration KillCoolDown = NebulaAPI.Configurations.KillConfiguration("options.role.xinobiU.killCooldown", CoolDownType.Relative, (0f, 60f, 2.5f), 25f, (-40f, 40f, 2.5f), -5f, (0.125f, 2f, 0.125f), 1f);
@@ -194,7 +196,7 @@ public class XinobiU : DefinedRoleTemplate, DefinedRole,IAssignableDocument
                     ventNinjaButton.StartCoolDown();
                 };
 
-                Virial.Components.ObjectTracker<Console> consoleTracker = new ObjectTrackerUnityImpl<Console, Console>(MyPlayer.VanillaPlayer, 3f/*AmongUsUtil.VanillaKillDistance*/, 
+                Virial.Components.ObjectTracker<Console> consoleTracker = new ObjectTrackerUnityImpl<Console, Console>(MyPlayer.VanillaPlayer, AmongUsLLImpl.Instance.VanillaKillDistance/*AmongUsUtil.VanillaKillDistance*/, 
                     () => ShipStatus.Instance.AllConsoles,c => true, c => true, c => c,
                     c => [c.transform.position], c => c.Image, Color.red,true, false).Register(this);
 
@@ -277,6 +279,7 @@ public class XinobiU : DefinedRoleTemplate, DefinedRole,IAssignableDocument
 
                 ability.AllVentConnects(true);
                 physics.RpcEnterVent(ventLocal.Id);
+                
                 ventLocal.SetButtons(true);
                 ability.AllVentConnects(true);
             }

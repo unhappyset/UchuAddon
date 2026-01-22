@@ -1,0 +1,8 @@
+# Perk
+
+"perk.repairU.name" : "リペア"
+"perk.repairU.detail" : "サボタージュを即座に修理します。"
+
+"perk.storageBoxU.name" : "通行止め"
+"perk.storageBoxU.detail" : "%D%秒間、当たり判定のある箱を設置する。<br>このパークには%CD%秒のクールダウンがあり<br>一度のみ使用できる。"
+"perk.storageBoxU.duration" : "箱持続時間"

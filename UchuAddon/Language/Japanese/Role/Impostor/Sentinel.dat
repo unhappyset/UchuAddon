@@ -1,0 +1,25 @@
+ Assignable
+
+"role.sentinelU.name" : "センチネル"
+"role.sentinelU.short" : "セン"
+"role.sentinelU.blurb" : "アンチデバイス"
+
+# Document
+
+"role.sentinelU.doc" : "情報機器の周囲にプレイヤーがいるとリアルタイムで報告されます。"
+
+# Options
+
+"options.role.sentinelU.detail" : "センチネルは情報機器の周辺にプレイヤーがいることを受け取れます。"
+"options.role.sentinelU.impostorNoDevice" : "インポスターを検知しない"
+
+# Game
+
+
+# UI
+
+
+# Stats
+
+
+# Titles
