@@ -46,17 +46,17 @@ using Vector3 = UnityEngine.Vector3;
 
 namespace Hori.Scripts.Role.Modifier;
 
-public class HoodooU : DefinedAllocatableModifierTemplate, DefinedAllocatableModifier
+public class HighLowU : DefinedAllocatableModifierTemplate, DefinedAllocatableModifier
 {
-    private HoodooU() : base("HoodooU", "HOO", new(194, 198, 110), [Vote, YesVote, Random])
+    private HighLowU() : base("HighLowU", "HIG", new(194, 198, 110), [Vote, YesVote, Random])
     {
         ConfigurationHolder?.AddTags(AddonConfigurationTags.TagUchuAddon);
     }
 
-    static private IntegerConfiguration Vote = NebulaAPI.Configurations.Configuration("options.role.HoodooU.Vote", (0, 5), 0);
-    static private IntegerConfiguration Random = NebulaAPI.Configurations.Configuration("options.role.HoodooU.random", (0, 90), 50);
-    static private IntegerConfiguration YesVote = NebulaAPI.Configurations.Configuration("options.role.HoodooU.YesVote", (1, 5), 1);
-    static public HoodooU MyRole = new HoodooU();
+    static private IntegerConfiguration Vote = NebulaAPI.Configurations.Configuration("options.role.HighLowU.Vote", (0, 5), 0);
+    static private IntegerConfiguration Random = NebulaAPI.Configurations.Configuration("options.role.HighLowU.random", (0, 90), 50);
+    static private IntegerConfiguration YesVote = NebulaAPI.Configurations.Configuration("options.role.HighLowU.YesVote", (1, 5), 1);
+    static public HighLowU MyRole = new HighLowU();
     /*static internal Image IconImage = NebulaAPI.AddonAsset.GetResource("RoleIcon/Duplicate.png")!.AsImage(100f)!;*/
     /*Image? DefinedAssignable.IconImage => IconImage;*/
     RuntimeModifier RuntimeAssignableGenerator<RuntimeModifier>.CreateInstance(GamePlayer player, int[] arguments) => new Instance(player);

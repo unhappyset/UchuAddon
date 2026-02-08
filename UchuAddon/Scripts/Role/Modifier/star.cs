@@ -29,8 +29,6 @@ using Virial.Text;
 using static Nebula.Roles.Impostor.Cannon;
 using Color = UnityEngine.Color;
 using Image = Virial.Media.Image;
-using Vector2 = UnityEngine.Vector2;
-using Vector3 = UnityEngine.Vector3;
 
 namespace Hori.Scripts.Role.Modifier;
 
