@@ -50,16 +50,15 @@ public class HighLowU : DefinedAllocatableModifierTemplate, DefinedAllocatableMo
 {
     private HighLowU() : base("HighLowU", "HIG", new(194, 198, 110), [Vote, YesVote, Random])
     {
-        base.ConfigurationHolder!.Illustration = NebulaAPI.AddonAsset.GetResource("RoleImage/Uchu__20260208141609.png")!.AsImage(115f);
         ConfigurationHolder?.AddTags(AddonConfigurationTags.TagUchuAddon);
     }
 
     static private IntegerConfiguration Vote = NebulaAPI.Configurations.Configuration("options.role.HighLowU.Vote", (0, 5), 0);
-    static private IntegerConfiguration Random = NebulaAPI.Configurations.Configuration("options.role.HighLowU.random", (0, 100), 50);
-    static private IntegerConfiguration YesVote = NebulaAPI.Configurations.Configuration("options.role.HighLowU.YesVote", (1, 5), 2);
+    static private IntegerConfiguration Random = NebulaAPI.Configurations.Configuration("options.role.HighLowU.random", (0, 90), 50);
+    static private IntegerConfiguration YesVote = NebulaAPI.Configurations.Configuration("options.role.HighLowU.YesVote", (1, 5), 1);
     static public HighLowU MyRole = new HighLowU();
-    /*static internal Image IconImage = NebulaAPI.AddonAsset.GetResource("RoleIcon/Duplicate.png")!.AsImage(100f)!;*/
-    /*Image? DefinedAssignable.IconImage => IconImage;*/
+    static internal Image IconImage = NebulaAPI.AddonAsset.GetResource("RoleIcon/HighLow.png")!.AsImage(100f)!;
+    Image? DefinedAssignable.IconImage => IconImage;
     RuntimeModifier RuntimeAssignableGenerator<RuntimeModifier>.CreateInstance(GamePlayer player, int[] arguments) => new Instance(player);
 
 
@@ -92,6 +91,11 @@ public class HighLowU : DefinedAllocatableModifierTemplate, DefinedAllocatableMo
                 }
                 ev.Vote = HoodooVote;
             }
+        }
+
+        void RuntimeAssignable.DecorateNameConstantly(ref string name, bool canSeeAllInfo, bool inEndScene)
+        {
+            if (AmOwner || canSeeAllInfo) name += MyRole.GetRoleIconTagSmall();
         }
     }
 }

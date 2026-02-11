@@ -34,14 +34,14 @@ namespace Hori.Scripts.Role.Modifier;
 
 public class StarU : DefinedAllocatableModifierTemplate, DefinedAllocatableModifier, HasCitation
 {
-    private StarU() : base("StarU", "STA", new(255, 255, 50), [RainbowStar,RainbowStarOption])
+    private StarU() : base("StarU", "STA", new(255, 255, 50), [RainbowStar, RainbowStarOption])
     {
         base.ConfigurationHolder!.Illustration = NebulaAPI.AddonAsset.GetResource("RoleImage/Uchu__20260206140613.png")!.AsImage(115f);
         ConfigurationHolder?.AddTags(AddonConfigurationTags.TagUchuAddon);
     }
-
-    static private FloatConfiguration RainbowStarOption = NebulaAPI.Configurations.Configuration("options.role.StarU.RainbowStarOption", (5f, 15f, 2.5f), 8.5f);
     static private BoolConfiguration RainbowStar = NebulaAPI.Configurations.Configuration("options.StarU.RainbowStar", false);
+    static private IntegerConfiguration RainbowStarOption = NebulaAPI.Configurations.Configuration("options.role.StarU.RainbowStarOption", (5, 15), 8, () => RainbowStar);
+
     static internal Image IconImage = NebulaAPI.AddonAsset.GetResource("RoleIcon/Star.png")!.AsImage(100f)!;
     Citation? HasCitation.Citation => Hori.Core.Citations.SuperNewRoles;
     Image? DefinedAssignable.IconImage => IconImage;
@@ -76,11 +76,13 @@ public class StarU : DefinedAllocatableModifierTemplate, DefinedAllocatableModif
                 float hue = (Time.time * (RainbowStarOption / 10f)) % 1f;
                 UnityEngine.Color rainbowColor = UnityEngine.Color.HSVToRGB(hue, 1f, 1f);
                 string currentColorHex = UnityEngine.ColorUtility.ToHtmlStringRGB(rainbowColor);
-                name = $"<color=#{currentColorHex}>{originalName}{(AmOwner ? " ★" : "")}</color>";
+                name = $"<color=#{currentColorHex}>{originalName}</color>";
+                if (AmOwner || canSeeAllInfo) name += MyRole.GetRoleIconTagSmall();
             }
             else
             {
-                name = $"<color=#FFFF00>{originalName}{(AmOwner ? " ★" : "")}</color>";
+                name = $"<color=#FFFF00>{originalName}</color>";
+                if (AmOwner || canSeeAllInfo) name += MyRole.GetRoleIconTagSmall();
             }
         }
     }
